@@ -47,9 +47,6 @@ uint16_t PC_START = 0x3000;
 uint16_t mem_read(uint16_t address)
 { return mem[address]; }
 
-void mem_write(uint16_t address, uint16_t value)
-{ mem[address] = value; }
-
 /** @brief memory write, transfer to memory
  *
  * Given a 16 bit address and a 16 bit value, store the value in our
@@ -65,7 +62,8 @@ void mem_write(uint16_t address, uint16_t value)
  *   stored where requested, it could actually be a signed number, or an ascii
  *   character, or some other type of data.
  */
-// put your implememtation of mem_write() here below it documentation
+void mem_write(uint16_t address, uint16_t value)
+{ mem[address] = value; }
 
 /** @brief sign extend bits
  *
